@@ -1,3 +1,4 @@
+//1. Отобразите в результате всех поставщиков, которые находятся в городе с именем, начинающимся на "S", но не в стране начинающейся на "S".
 SELECT * FROM Customers
-WHERE City LIKE 'C%'
-AND Country NOT LIKE 'C%';
+WHERE City LIKE 'S%'
+AND Country NOT LIKE 'S%';
