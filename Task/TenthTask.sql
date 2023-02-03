@@ -2,8 +2,7 @@
 SELECT
 	Shippers.ShipperID,
 	Shippers.ShipperName,
-	SUM(Quantity) AS AmountOfShipments
+	COUNT(OrderID) AS CountOfOrder
 FROM Shippers
-	INNER JOIN Orders ON Orders.ShipperID = Shippers.ShipperID
-	INNER JOIN OrderDetails ON OrderDetails.OrderID = Orders.OrderID
+	LEFT JOIN Orders ON Orders.ShipperID = Shippers.ShipperID
 GROUP BY Shippers.ShipperID
